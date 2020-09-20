@@ -1,0 +1,38 @@
+<h1>Editing Libro</h1>
+
+<%= form_with(model: @libro, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.check_box :estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_prestamo %>
+    <%= form.date_select :fecha_prestamo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_devolucion%>
+    <%= form.date_select :fecha_devolucion%>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @libro %> |
+<%= link_to 'Back', libros_path %>

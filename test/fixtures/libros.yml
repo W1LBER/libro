@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  autor: MyString
+  estado: false
+  fecha_prestamo: 2020-09-20
+  fecha_devolucion: 2020-09-20
+
+two:
+  titulo: MyString
+  autor: MyString
+  estado: false
+  fecha_prestamo: 2020-09-20
+  fecha_devolucion: 2020-09-20

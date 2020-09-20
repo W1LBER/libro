@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Libros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Estado</th>
+      <th>Fecha prestamo</th>
+      <th>Fecha devolucion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <p>
+  Order by:
+  <%= link_to 'titulo', libros_path(order: 'titulo')%>
+  <%= link_to 'estado', libros_path(order: 'estado')%>
+  <%= link_to 'Default', libros_path%>
+  </p>
+
+  <tbody>
+    <% @libros.each do |libro| %>
+      <tr>
+        <td><%= libro.titulo %></td>
+        <td><%= libro.autor %></td>
+        <% if libro.estado == true%>
+        <td> Prestado </td>
+      <% else%>
+        <td>En estante</td>
+      <%end%>
+
+        <td><%= libro.fecha_prestamo %></td>
+        <td><%= libro.fecha_devolucion %></td>
+        <td><%= link_to 'Show', libro %></td>
+        <td><%= link_to 'Edit', edit_libro_path(libro) %></td>
+        <td><%= link_to 'Destroy', libro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Libro', new_libro_path %>
