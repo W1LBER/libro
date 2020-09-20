@@ -7,7 +7,7 @@ class LibrosController < ApplicationController
     if params[:order] == 'titulo'
       @libros = Libro.all.order('titulo')
     elsif params[:order] == 'estado'
-      @libros = Libro.where(['estado = true'])
+      @libros = Libro.all.order('estado')
     else
       @libros = Libro.all
     end
